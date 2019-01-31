@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="fullmaterialtemplate" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>PhoneGap Material</name>
+    <name>My App</name>
     <description>
         PhoneGap App using the dashboard template for the Material Design Lite templates from here: https://getmdl.io/templates/index.html 
     </description>
