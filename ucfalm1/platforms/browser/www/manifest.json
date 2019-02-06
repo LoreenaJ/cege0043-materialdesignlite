@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
+  "name": "My App",
+  "short_name": "My App",
   "version": "fullmaterialtemplate",
-  "description": "Hello World sample application that responds to the deviceready event.",
+  "description": "PhoneGap App using the dashboard template for the Material Design Lite templates from here: https://getmdl.io/templates/index.html",
   "author": "PhoneGap Team",
   "icons": [],
   "start_url": "index.html"
