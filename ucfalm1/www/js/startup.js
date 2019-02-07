@@ -3,3 +3,9 @@ function trackAndCircle(){
 	trackLocation();
 	addShapes();
 }
+
+function startup(){
+	document.addEventListener('DOMContentLoaded',function(){
+		trackAndCircle();
+	},false);
+}
