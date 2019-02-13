@@ -13,9 +13,10 @@ function showPosition(position){
 	if (userMarker){
 		mymap.removeLayer(userMarker);
 	}
-	userMarker = L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup("<b>You were here</b>");
+	userMarker = L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup("<b>You are here</b>");
 	document.getElementById('showLocation').innerHTML = 'Latitude:' + position.coords.latitude + '<br>Longitude:' + position.coords.longitude;
-	mymap.fitBounds(earthquakelayer.getBounds());
+	mymap.fitBounds(userMarker.getBounds());
+	getDistance();
 }
 
 function getDistance(){
@@ -27,7 +28,6 @@ function getDistanceFromPoint(position){
 	var lat = 51.524616;
 	var lng = -0.13818;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat, lng, 'K');
-	
 	if (distance < 0.1)
 		alert("Within proximity");
 }
