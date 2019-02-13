@@ -27,7 +27,9 @@ function getDistanceFromPoint(position){
 	var lat = 51.524616;
 	var lng = -0.13818;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat, lng, 'K');
-	document.getElementById('showDistance').innerHTML = "Distance:" + distance;
+	
+	if (distance < 0.1)
+		alert("Within proximity");
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2, unit){
