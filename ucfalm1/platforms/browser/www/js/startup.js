@@ -1,5 +1,6 @@
 function trackAndCircle(){
 	alert('Tracking location and Drawing shapes');
+	zoomOnMap();
 	trackLocation();
 	addShapes();
 }

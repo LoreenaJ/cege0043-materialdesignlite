@@ -1,5 +1,13 @@
 var userMarker;
 
+function zoomOnMap(){
+	navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+function getPosition(position){
+	mymap.setView([position.coords.latitude, position.coords.longitude], 10);
+		}
+
 function trackLocation(){
 	if(navigator.geolocation){
 		navigator.geolocation.watchPosition(showPosition);
