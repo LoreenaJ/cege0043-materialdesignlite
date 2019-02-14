@@ -1,11 +1,12 @@
 var userMarker;
 
 function zoomOnMap(){
+	alert('Zooming onto your position');
 	navigator.geolocation.getCurrentPosition(getPosition);
 }
 
 function getPosition(position){
-	mymap.setView([position.coords.latitude, position.coords.longitude], 10);
+	mymap.setView([position.coords.latitude, position.coords.longitude], 15);
 		}
 
 function trackLocation(){
