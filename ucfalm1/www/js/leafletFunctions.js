@@ -1,14 +1,15 @@
 var client;
+var earthquakes;
 var earthquakelayer;
 
 function addShapes(){
-		L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello World!</b><br/>I am a popup.").openPopup();
+		L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello World!</b><br/>I am a popup.");
 
 		L.circle([51.508,-0.11],500,{
 			color: 'red',
 			fillColor: '#f03',
 			fillOpacity: 0.5
-		}).addTo(mymap).bindPopup("I am a circle.")
+		}).addTo(mymap).bindPopup("I am a circle.");
 		
 		var myPolygon=L.polygon([
 			[51.509,-0.08],
@@ -18,7 +19,7 @@ function addShapes(){
 				color: 'red',
 				fillColor: '#f03',
 				fillOpacity: 0.5
-			}).addTo(mymap).bindPopup("I am a triangle.")
+			}).addTo(mymap).bindPopup("I am a triangle.");
 }
 
 function getEarthquakes(){
@@ -37,7 +38,6 @@ function earthquakeResponse(){
 
 function loadEarthquakelayer(earthquakedata){
 	var earthquakejson = JSON.parse(earthquakedata);
+	earthquakes = earthquakejson
 	earthquakelayer = L.geoJson(earthquakejson).addTo(mymap);
-
-	mymap.fitBounds(earthquakelayer.getBounds());
 }
