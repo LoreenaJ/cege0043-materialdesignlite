@@ -33,11 +33,11 @@ function getDistance(){
 }
 
 function getDistanceFromPoint(position){
-	var lat = 52.2153181;
-	var lng = 0.1417129;
+	var lat = 51.524616;
+	var lng = -0.13818;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat, lng, 'K');
 	if (distance <= 0.1){
-		alert("Within proximity (100m)");
+		alert("Within proximity of UCL (100m)");
 	}
 }
 
@@ -58,16 +58,17 @@ function calculateDistance(lat1, lon1, lat2, lon2, unit){
 			return dist	
 		}
 
-function getDistanceFromMultiplePoints(position){
-	var minDistance = 1000000000000000;
-	var closestQuake = "";
-	for (var i = 0, i < earthquakes.features.length; i++){
-		var obj = earthquakes.features[i];
-		var distance = calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0],obj.geometry.coordinates[1],'K');
-		if (distance < minDistance){
-			minDistance = distance;
-			closestQuake = obj.properties.place;
-		}
-	}
-	alert("Earthquake:" + closestQuake + "is" + minDistance + "Km away");
+function getDistanceFromMultiplePoints(position) {
+var minDistance = 100000000000;
+var closestQuake = "";
+for(var i = 0; i < earthquakes.features.length; i++) {
+var obj = earthquakes.features[i];
+var distance = calculateDistance(position.coords.latitude,
+position.coords.longitude,obj.geometry.coordinates[0], obj.geometry.coordinates[1], 'K');
+if (distance < minDistance){
+minDistance = distance;
+closestQuake = obj.properties.place;
+}
+}
+alert("Earthquake: " + closestQuake + " is distance " + minDistance + "away");
 }
