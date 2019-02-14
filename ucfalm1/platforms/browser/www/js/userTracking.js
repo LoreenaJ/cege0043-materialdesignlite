@@ -28,7 +28,7 @@ function getDistanceFromPoint(position){
 	var lng = 0.1417129;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat, lng, 'K');
 	if (distance <= 0.1){
-		alert("Within proximity of Home (100m)");
+		alert("Within proximity (100m)");
 	}
 }
 
