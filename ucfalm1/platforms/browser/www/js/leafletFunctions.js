@@ -1,4 +1,5 @@
 var client;
+var earthquakes;
 var earthquakelayer;
 
 function addShapes(){
@@ -37,7 +38,6 @@ function earthquakeResponse(){
 
 function loadEarthquakelayer(earthquakedata){
 	var earthquakejson = JSON.parse(earthquakedata);
+	earthquakes = earthquakejson
 	earthquakelayer = L.geoJson(earthquakejson).addTo(mymap);
-
-	mymap.fitBounds(earthquakelayer.getBounds());
 }
