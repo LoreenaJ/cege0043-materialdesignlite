@@ -15,7 +15,6 @@ function showPosition(position){
 	}
 	userMarker = L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup("<b>You are here</b>");
 	document.getElementById('showLocation').innerHTML = 'Latitude:' + position.coords.latitude + '<br>Longitude:' + position.coords.longitude;
-	mymap.fitBounds(userMarker.getBounds());
 	getDistance();
 }
 
@@ -25,11 +24,12 @@ function getDistance(){
 }
 
 function getDistanceFromPoint(position){
-	var lat = 51.524616;
-	var lng = -0.13818;
+	var lat = 52.2153181;
+	var lng = 0.1417129;
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude, lat, lng, 'K');
-	if (distance < 0.1)
-		alert("Within proximity");
+	if (distance <= 0.1){
+		alert("Within proximity of Home (100m)");
+	}
 }
 
 function calculateDistance(lat1, lon1, lat2, lon2, unit){
